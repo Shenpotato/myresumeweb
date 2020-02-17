@@ -13,7 +13,8 @@ public class SchoolInfo {
     private Date enddate;
     private String orginazationname;
     private String position;
-    private List<String> activitycontents;
+    private String activitycontents;
+    private String owner;
 
     public Integer getId() {
         return id;
@@ -55,11 +56,32 @@ public class SchoolInfo {
         this.position = position;
     }
 
-    public List<String> getActivitycontents() {
+    public String getActivitycontents() {
         return activitycontents;
     }
 
-    public void setActivitycontents(List<String> activitycontents) {
+    public void setActivitycontents(String activitycontents) {
         this.activitycontents = activitycontents;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    @Override
+    public String toString() {
+        return "SchoolInfo{" +
+                "id=" + id +
+                ", startdate=" + startdate +
+                ", enddate=" + enddate +
+                ", orginazationname='" + orginazationname + '\'' +
+                ", position='" + position + '\'' +
+                ", activitycontents='" + activitycontents + '\'' +
+                ", owner='" + owner + '\'' +
+                '}';
     }
 }

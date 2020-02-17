@@ -12,7 +12,8 @@ public class DevelopInfo {
     private Date startdate;
     private Date enddate;
     private String projectname;
-    private List<String> projectContents;
+    private String projectContents;
+    private String owner;
 
 
     public Integer getId() {
@@ -47,12 +48,31 @@ public class DevelopInfo {
         this.projectname = projectname;
     }
 
-    public List<String> getProjectContents() {
+    public String getProjectContents() {
         return projectContents;
     }
 
-    public void setProjectContents(List<String> projectContents) {
+    public void setProjectContents(String projectContents) {
         this.projectContents = projectContents;
     }
 
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    @Override
+    public String toString() {
+        return "DevelopInfo{" +
+                "id=" + id +
+                ", startdate=" + startdate +
+                ", enddate=" + enddate +
+                ", projectname='" + projectname + '\'' +
+                ", projectContents='" + projectContents + '\'' +
+                ", owner='" + owner + '\'' +
+                '}';
+    }
 }

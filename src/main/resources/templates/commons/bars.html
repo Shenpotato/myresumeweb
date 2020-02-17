@@ -26,18 +26,18 @@
                                 <!--<li><a href="portfolio.html">portfolio</a>-->
                                 <!--<li><a href="testimonials.html">references</a></li>-->
                                 <!--<li><a href="search.html">search</a></li>-->
-                                <!--<li><a href="category.html">category</a></li>-->
+                                <!--<li><a th:href="@{/blog}">个人博客</a></li>-->
                                 <li><a th:href="@{/contact}">联系我</a></li>
                             </ul>
                         </nav>
                     </div>
                 </div>
                 <!--导航栏右边个人信息展开按钮-->
-                <div id="ace-head-col3" class="ace-head-col text-right">
-                    <button id="ace-sidebar-btn" class="btn btn-icon btn-light btn-shade">
-                        <span class="ace-icon ace-icon-side-bar-icon"></span>
-                    </button>
-                </div>
+                <!--<div id="ace-head-col3" class="ace-head-col text-right">-->
+                    <!--<button id="ace-sidebar-btn" class="btn btn-icon btn-light btn-shade">-->
+                        <!--<span class="ace-icon ace-icon-side-bar-icon"></span>-->
+                    <!--</button>-->
+                <!--</div>-->
             </div>
         </div><!-- .ace-container -->
     </div><!-- .ace-head-inner -->
@@ -46,10 +46,10 @@
 <!--左侧卡片-->
 <article id="ace-card" class="ace-card bg-primary" th:fragment="leftside_card">
     <div class="ace-card-inner text-center">
-        <img class="avatar avatar-195" th:src="@{/asserts/img/uploads/avatar/avatar-195x195.png}" width="195"
+        <img class="avatar avatar-195" th:src="@{${basicInfo.photoaddr}}" width="195"
              height="195" alt="">
         <h1>沈铮涛</h1>
-        <p class="text-muted">Florist | Decorator</p>
+        <p class="text-muted">后台开发 | Java工程师</p>
         <ul class="ace-social clear-list">
             <li><a><span class="ace-icon ace-icon-facebook"></span></a></li>
             <li><a><span class="ace-icon ace-icon-twitter"></span></a></li>
@@ -60,40 +60,87 @@
     </div>
 
     <footer class="ace-card-footer">
-        <a class="btn btn-lg btn-block btn-thin btn-upper " href="#">Download Resume</a>
+        <a class="btn btn-lg btn-block btn-thin btn-upper " th:href="@{/download}">简历下载</a>
+        <!--<a class="btn btn-lg btn-block btn-thin btn-upper " href="http://www.shenpotato.com/shenpotato/download">简历下载</a>-->
     </footer>
 </article><!-- #ace-card -->
 
-<!--内容容器右侧导航栏-->
-<nav id="ace-nav-sm" class="ace-nav hidden-lg hidden-md" th:fragment="content_rightside_bar">
+<!--容器内部右边导航栏-->
+<div id="ace-nav-wrap" class="hidden-sm hidden-xs" th:fragment="content_rightside_bar">
+    <div class="ace-nav-cont">
+        <div id="ace-nav-scroll">
+            <nav id="ace-nav" class="ace-nav">
+                <ul class="clear-list">
+                    <li>
+                        <a th:href="@{/index}" data-tooltip="主页"><img class="avatar avatar-42"
+                                                                      th:src="@{${basicInfo.photoaddr}}"
+                                                                      alt=""></a>
+                    </li>
+                    <li>
+                        <a th:href="@{/index}" data-tooltip="简历"><span
+                                class="ace-icon ace-icon-experience"></span></a>
+                    </li>
+                    <!--<li>-->
+                    <!--<a href="portfolio.html" data-tooltip="Portfolio"><span-->
+                    <!--class="ace-icon ace-icon-portfolio"></span></a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                    <!--<a href="testimonials.html" data-tooltip="References"><span-->
+                    <!--class="ace-icon ace-icon-references"></span></a>-->
+                    <!--</li>-->
+                    <li>
+                        <a th:href="@{/contact}" data-tooltip="联系我"><span
+                                class="ace-icon ace-icon-contact"></span></a>
+                    </li>
+                    <!--<li>-->
+                    <!--<a href="category.html" data-tooltip="Blog"><span-->
+                    <!--class="ace-icon ace-icon-blog"></span></a>-->
+                    <!--</li>-->
+                </ul>
+            </nav>
+        </div>
+
+        <div id="ace-nav-tools" class="hidden">
+            <span class="ace-icon ace-icon-dots-three-horizontal"></span>
+
+            <button id="ace-nav-arrow" class="clear-btn">
+                <span class="ace-icon ace-icon-chevron-thin-down"></span>
+            </button>
+        </div>
+    </div>
+    <div class="ace-nav-btm"></div>
+</div><!-- .ace-nav-wrap -->
+
+<!--不知名的bar-->
+<nav id="ace-nav-sm" class="ace-nav hidden-lg hidden-md" th:fragment="unknow_bar">
     <ul class="clear-list">
+        <!--<li>-->
+            <!--<a href="index.html" data-tooltip="Home">-->
+                <!--<img class="avatar avatar-42" th:src="@{/asserts/img/uploads/avatar/avatar-42x42.png}" alt="">-->
+            <!--</a>-->
+        <!--</li>-->
         <li>
-            <a href="index.html" data-tooltip="Home"><img class="avatar avatar-42"
-                                                          th:src="@{/asserts/img/uploads/avatar/avatar-42x42.png}"
-                                                          alt=""></a>
-        </li>
-        <li>
-            <a href="experience.html" data-tooltip="Experience"><span
+            <a th:href="@{/index.html}" data-tooltip="主页"><span
                     class="ace-icon ace-icon-experience"></span></a>
         </li>
+        <!--<li>-->
+            <!--<a href="portfolio.html" data-tooltip="Portfolio"><span class="ace-icon ace-icon-portfolio"></span></a>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<a href="testimonials.html" data-tooltip="References"><span class="ace-icon ace-icon-references"></span></a>-->
+        <!--</li>-->
         <li>
-            <a href="portfolio.html" data-tooltip="Portfolio"><span class="ace-icon ace-icon-portfolio"></span></a>
+            <a th:href="@{/contact}" data-tooltip="联系我"><span class="ace-icon ace-icon-contact"></span></a>
         </li>
-        <li>
-            <a href="testimonials.html" data-tooltip="References"><span class="ace-icon ace-icon-references"></span></a>
-        </li>
-        <li>
-            <a href="contact.html" data-tooltip="Contact"><span class="ace-icon ace-icon-contact"></span></a>
-        </li>
-        <li>
-            <a href="category.html" data-tooltip="Blog"><span class="ace-icon ace-icon-blog"></span></a>
-        </li>
+        <!--<li>-->
+            <!--<a href="category.html" data-tooltip="Blog"><span class="ace-icon ace-icon-blog"></span></a>-->
+        <!--</li>-->
     </ul>
 </nav><!-- #ace-tab-nav-sm -->
 
 <!--右侧按钮展开介绍卡片-->
 <div id="ace-sidebar" th:fragment="rightside_card">
-    <button id="ace-sidebar-close" class="btn btn-icon btn-light btn-shade" th:fragment="rightsidecard">
+    <button id="ace-sidebar-close" class="btn btn-icon btn-light btn-shade">
         <span class="ace-icon ace-icon-close"></span>
     </button>
 
@@ -258,6 +305,15 @@
 
     </div><!-- #ace-sidebar-inner -->
 </div><!-- #ace-sidebar -->
+
+<!--页底信息-->
+<footer id="ace-footer" class="ace-container-shift" th:fragment="footer_bar">
+    <div class="ace-container">
+        <div class="ace-footer-cont clear-mrg">
+            <p class="text-center">Copyright &copy; 2019 沈铮涛的个人简历</p>
+        </div>
+    </div><!-- .ace-container -->
+</footer><!-- #ace-footer -->
 
 </body>
 </html>

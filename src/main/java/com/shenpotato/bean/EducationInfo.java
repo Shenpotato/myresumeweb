@@ -8,6 +8,13 @@ import java.sql.Date;
 public class EducationInfo {
 
     private Integer id;
+    private Date startdate;
+    private Date enddate;
+    private String school;
+    private String major;
+    private String educationlevel;
+    private String owner;
+
 
     public Integer getId() {
         return id;
@@ -41,6 +48,14 @@ public class EducationInfo {
         this.school = school;
     }
 
+    public String getMajor() {
+        return major;
+    }
+
+    public void setMajor(String major) {
+        this.major = major;
+    }
+
     public String getEducationlevel() {
         return educationlevel;
     }
@@ -49,9 +64,11 @@ public class EducationInfo {
         this.educationlevel = educationlevel;
     }
 
-    private Date startdate;
-    private Date enddate;
-    private String school;
-    private String educationlevel;
+    public String getOwner() {
+        return owner;
+    }
 
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
 }

@@ -11,6 +11,7 @@ public class AwardInfo {
     private Date date;
     private String awardname;
     private String awardlevel;
+    private String owner;
 
     public Integer getId() {
         return id;
@@ -44,4 +45,11 @@ public class AwardInfo {
         this.awardlevel = awardlevel;
     }
 
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
 }

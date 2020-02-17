@@ -15,7 +15,26 @@ public class BasicInfo {
     private String email;
     private String phonenumber;
     private String school;
+    private String photoaddr;
+    private String englishlevel;
+    private String hobby;
 
+    @Override
+    public String toString() {
+        return "BasicInfo{" +
+                "id=" + id +
+                ", personalstatement='" + personalstatement + '\'' +
+                ", name='" + name + '\'' +
+                ", birth=" + birth +
+                ", address='" + address + '\'' +
+                ", email='" + email + '\'' +
+                ", phonenumber='" + phonenumber + '\'' +
+                ", school='" + school + '\'' +
+                ", photoaddr='" + photoaddr + '\'' +
+                ", englishlevel='" + englishlevel + '\'' +
+                ", hobby='" + hobby + '\'' +
+                '}';
+    }
 
     public Integer getId() {
         return id;
@@ -81,17 +100,27 @@ public class BasicInfo {
         this.school = school;
     }
 
-    @Override
-    public String toString() {
-        return "BasicInfo{" +
-                "id=" + id +
-                ", personlstatement='" + personalstatement + '\'' +
-                ", name='" + name + '\'' +
-                ", birth=" + birth +
-                ", address='" + address + '\'' +
-                ", email='" + email + '\'' +
-                ", phonenumber='" + phonenumber + '\'' +
-                ", school='" + school + '\'' +
-                '}';
+    public String getPhotoaddr() {
+        return photoaddr;
+    }
+
+    public void setPhotoaddr(String photoaddr) {
+        this.photoaddr = photoaddr;
+    }
+
+    public String getEnglishlevel() {
+        return englishlevel;
+    }
+
+    public void setEnglishlevel(String englishlevel) {
+        this.englishlevel = englishlevel;
+    }
+
+    public String getHobby() {
+        return hobby;
+    }
+
+    public void setHobby(String hobby) {
+        this.hobby = hobby;
     }
 }

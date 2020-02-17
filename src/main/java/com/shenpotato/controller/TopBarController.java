@@ -18,4 +18,5 @@ public class TopBarController {
     public String goIndex(){
         return "index";
     }
+
 }

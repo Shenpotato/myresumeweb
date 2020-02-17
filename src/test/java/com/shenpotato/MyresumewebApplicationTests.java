@@ -16,5 +16,4 @@ public class MyresumewebApplicationTests {
 	public void contextLoads() {
 
 	}
-
 }
